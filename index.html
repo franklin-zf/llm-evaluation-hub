@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="大语言模型（LLM）测评与评估技术全景交互式学习工作站，包含16讲深度图文讲义、18+基准百科与生产级CI/CD代码实战。">
+  <title>LLM 测评技术全景学习工作站 | LLM Eval Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 顶栏 Masthead (Single-Truth Context) -->
+  <header class="masthead">
+    <div class="masthead-container">
+      <div class="brand-group">
+        <div class="brand-badge" aria-label="技术架构">纯前端零依赖 · 16讲体系讲义</div>
+        <h1 class="brand-title">LLM 测评技术全景学习工作站</h1>
+        <p class="brand-tagline">从学术前沿基准到生产级 CI/CD 自动化门禁的沉浸式实战导航</p>
+      </div>
+      <div class="header-actions">
+        <div class="progress-indicator" aria-live="polite">
+          <span class="progress-label">学习总进度</span>
+          <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" id="global-progress-bar" style="width: 0%;"></div>
+          </div>
+          <span class="progress-pct" id="global-progress-text">0%</span>
+        </div>
+        <button id="theme-toggle-btn" class="theme-toggle" aria-label="切换浅色/深色主题" title="切换显示主题">
+          <span class="theme-icon" aria-hidden="true">🌓</span>
+          <span class="theme-label" id="theme-label-text">深色模式</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主工作台导航 Tabs -->
+  <nav class="hub-nav" aria-label="核心学习板块导航">
+    <div class="nav-container">
+      <button class="nav-tab active" data-tab="curriculum">
+        <span class="nav-text">4 周体系讲义</span>
+      </button>
+      <button class="nav-tab" data-tab="matrix">
+        <span class="nav-text">评测工具与基准百科</span>
+      </button>
+      <button class="nav-tab" data-tab="codelab">
+        <span class="nav-text">实战代码实验室</span>
+      </button>
+      <button class="nav-tab" data-tab="videos">
+        <span class="nav-text">权威讲座精粹</span>
+      </button>
+      <button class="nav-tab" data-tab="quiz">
+        <span class="nav-text">核心概念自测</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+    <!-- 板块 1: 4 周进阶学习路线与深度讲义阅读器 -->
+    <section id="section-curriculum" class="tab-panel active" aria-labelledby="tab-curriculum">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2 id="tab-curriculum" class="section-title">4 周体系化深度教程与进阶清单</h2>
+          <p class="section-desc">包含 16 讲完整图文教材，点击课时卡片即可在下方展开沉浸式讲义，结合打卡巩固核心认知。</p>
+        </div>
+        <div class="section-meta">
+          <span class="meta-pill" id="milestones-stat">已完成 0 / 16 项里程碑</span>
+        </div>
+      </div>
+
+      <!-- 4 周课程卡片网格 -->
+      <div class="curriculum-grid" id="curriculum-container">
+        <!-- 由 JavaScript 动态安全渲染 -->
+      </div>
+
+      <!-- 深度讲义沉浸式阅读器容器 -->
+      <section class="lesson-reader-section" id="lesson-reader-section" style="display: none;" aria-label="课时深度讲义">
+        <div class="reader-header">
+          <div class="reader-meta">
+            <span class="reader-badge" id="reader-week-tag">Week 1 · 核心课时</span>
+            <span class="reader-time" id="reader-time-tag">⏱️ 预计阅读 6 分钟</span>
+          </div>
+          <button id="reader-close-btn" class="btn btn-secondary reader-close-btn" aria-label="收起讲义">收起讲义 ✕</button>
+        </div>
+        <h3 class="reader-title" id="reader-lesson-title">讲义标题</h3>
+        <p class="reader-summary" id="reader-lesson-summary">讲义概要</p>
+
+        <div class="reader-body" id="reader-lesson-body">
+          <!-- 动态渲染深度背景、核心概念、实战指南、避坑提示 -->
+        </div>
+
+        <div class="reader-footer">
+          <button id="reader-toggle-milestone-btn" class="btn btn-action">
+            <span aria-hidden="true">✓</span>
+            <span id="reader-toggle-btn-text">标记此课已掌握并打卡</span>
+          </button>
+          <button id="reader-next-lesson-btn" class="btn btn-secondary">下一节课 →</button>
+        </div>
+      </section>
+    </section>
+
+    <!-- 板块 2: 多维评测框架与基准数据集百科 -->
+    <section id="section-matrix" class="tab-panel" aria-labelledby="tab-matrix">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2 id="tab-matrix" class="section-title">测评框架与 18+ 核心基准数据集百科</h2>
+          <p class="section-desc">涵盖主流开源测试工具库与 MMLU-Pro、GPQA、SWE-bench 等下一代防污染基准数据集详尽说明。</p>
+        </div>
+      </div>
+
+      <!-- 视图切换与筛选工具栏 -->
+      <div class="toolbar">
+        <div class="matrix-type-switch" role="radiogroup" aria-label="切换展示内容">
+          <button class="type-btn active" id="type-btn-frameworks">开源工具库 (8 项)</button>
+          <button class="type-btn" id="type-btn-benchmarks">核心基准数据集百科 (19 项)</button>
+        </div>
+
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input type="text" id="framework-search-input" class="search-input" placeholder="输入名称、评测目标、应用场景或关键词 (如: pytest, swe-bench, gpqa)..." aria-label="搜索评测框架与基准">
+          <button id="search-clear-btn" class="search-clear-btn" aria-label="清空搜索" style="display: none;">✕</button>
+        </div>
+
+        <div class="filter-pills" id="matrix-filter-pills" role="radiogroup" aria-label="按类别筛选">
+          <button class="filter-pill active" data-category="all">全部</button>
+          <button class="filter-pill" data-category="academic">学术与学科推理</button>
+          <button class="filter-pill" data-category="reasoning">复杂数理与软逻辑</button>
+          <button class="filter-pill" data-category="code">代码与软件工程</button>
+          <button class="filter-pill" data-category="instruction">指令遵循与长文本</button>
+          <button class="filter-pill" data-category="agent">智能体与工具调用</button>
+          <button class="filter-pill" data-category="safety">安全、诚实与对齐</button>
+          <button class="filter-pill" data-category="application">生产级单元测试</button>
+          <button class="filter-pill" data-category="rag">RAG 专项目标</button>
+        </div>
+      </div>
+
+      <!-- 卡片网格 -->
+      <div class="frameworks-grid" id="frameworks-container">
+        <!-- 由 JavaScript 动态渲染 -->
+      </div>
+      <div id="frameworks-empty-state" class="empty-state" style="display: none;">
+        <div class="empty-icon" aria-hidden="true">📂</div>
+        <h3 class="empty-title">未找到匹配的测评框架或基准</h3>
+        <p class="empty-desc">请尝试调整搜索关键词或切换上方的分类筛选标签。</p>
+        <button id="empty-reset-btn" class="btn btn-secondary">重置全部筛选</button>
+      </div>
+    </section>
+
+    <!-- 板块 3: 实战代码实验室 -->
+    <section id="section-codelab" class="tab-panel" aria-labelledby="tab-codelab">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2 id="tab-codelab" class="section-title">生产级测评工程脚手架</h2>
+          <p class="section-desc">包含学术打分、Pytest 业务断言、RAG 三元组评估与 Prompt 矩阵测试的开箱即用代码模版。</p>
+        </div>
+      </div>
+
+      <div class="codelab-layout">
+        <!-- 左侧脚手架导航 -->
+        <aside class="codelab-sidebar" aria-label="代码模版选择">
+          <div class="scaffold-menu" id="scaffold-menu">
+            <!-- 动态生成菜单项 -->
+          </div>
+        </aside>
+
+        <!-- 右侧代码详情展示 -->
+        <div class="codelab-viewer">
+          <div class="editor-header">
+            <div class="editor-meta">
+              <span class="file-badge" id="scaffold-filename">test_customer_support.py</span>
+              <span class="lang-tag" id="scaffold-lang">PYTHON</span>
+            </div>
+            <button id="copy-code-btn" class="btn btn-action">
+              <span class="copy-icon" aria-hidden="true">📋</span>
+              <span class="copy-text" id="copy-btn-text">一键复制代码</span>
+            </button>
+          </div>
+          <div class="editor-body">
+            <pre class="code-block"><code id="scaffold-code-content"></code></pre>
+          </div>
+          <div class="editor-footer">
+            <h3 class="footer-title">工程落地避坑要点：</h3>
+            <ul class="key-points-list" id="scaffold-key-points">
+              <!-- 动态要点 -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 板块 4: 权威讲座精粹 -->
+    <section id="section-videos" class="tab-panel" aria-labelledby="tab-videos">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2 id="tab-videos" class="section-title">工业界实战大师课与顶尖讲座精粹</h2>
+          <p class="section-desc">精选 Hamel Husain、Eugene Yan、LMSYS 团队等行业先锋的核心演讲与方法论总结。</p>
+        </div>
+      </div>
+      <div class="videos-grid" id="videos-container">
+        <!-- 动态生成视频卡片 -->
+      </div>
+    </section>
+
+    <!-- 板块 5: 核心概念自测 -->
+    <section id="section-quiz" class="tab-panel" aria-labelledby="tab-quiz">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2 id="tab-quiz" class="section-title">测评核心概念实战自测小测验</h2>
+          <p class="section-desc">检测对评测偏置、古德哈特定律、二元标签决策与 RAG 忠实度的理解程度，即时获得反馈、解析与一键讲义复习。</p>
+        </div>
+        <div class="section-meta">
+          <span class="meta-pill" id="quiz-summary-pill">得分：0% (0 / 5)</span>
+        </div>
+      </div>
+      <div class="quiz-container" id="quiz-container">
+        <!-- 动态生成题目卡片 -->
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-brand">LLM Evaluation Learning Hub</p>
+      <p class="footer-note">遵循 Pi-Zen 工程研发方法论与 Design Skill v4.0 审美契约 · 纯静态高可用构建</p>
+    </div>
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

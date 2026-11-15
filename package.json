@@ -1,0 +1,9 @@
+{
+  "name": "llm-eval-learning-hub",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "大语言模型（LLM）测评与评估技术全景交互式学习工作站",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}

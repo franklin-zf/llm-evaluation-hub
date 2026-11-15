@@ -1,0 +1,180 @@
+{
+  "$schema": "https://exp-skill.local/schemas/content-handoff-2.1.json",
+  "schema_version": "2.1",
+  "handoff_stage": "solution",
+  "project_id": "llm_eval_learning_hub",
+  "module_ids": ["MOD-001", "MOD-002", "MOD-003", "MOD-004", "MOD-005"],
+  "slice_ids": ["SLC-001", "SLC-002", "SLC-003", "SLC-004"],
+  "requirement_ids": [
+    "REQ-001",
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-005",
+    "REQ-006",
+    "REQ-007"
+  ],
+  "taste_contract": {
+    "visual_thesis": "一眼看清大模型测评全景与核心代码脚手架，极简克制，零视觉噪音与零 AI 塑料感",
+    "content_tension": "严谨深邃的代码/架构技术密度与优雅通透的现代排版呼吸感之间的张力平衡",
+    "signature_move": "非对称 Bento 网格系统搭配同心圆角光学层级与微触感状态指示器",
+    "anti_reference": "严禁千篇一律等权重四宫格、严禁无意义紫青渐变背景、严禁 01 // LABEL 假装极客的编号印章",
+    "restraint_rule": "严格遵循 Anti-Visual-Fill 原则，无多余凑数数据；次要元数据与扩展解析默认优雅折叠"
+  },
+  "roles": [
+    {
+      "role_id": "ROL-001",
+      "role_name": "AI Engineer & Learner"
+    }
+  ],
+  "surfaces": [
+    {
+      "surface_id": "primary_workspace",
+      "surface_category": "host_dashboard",
+      "discovery_surface": "role_home",
+      "allowed_scopes": [
+        "[Global: Host-level]",
+        "[Asset: Data-level]"
+      ],
+      "entry_ids": [
+        "ENT-001",
+        "ENT-002",
+        "ENT-003",
+        "ENT-004",
+        "ENT-005",
+        "ENT-006",
+        "ENT-007"
+      ],
+      "cards": [
+        {
+          "card_id": "card_curriculum_progress",
+          "label": "学习进度跟踪",
+          "context_scope": "[Global: Host-level]",
+          "metric_key": "curriculum_progress_pct",
+          "value_type": "percentage"
+        },
+        {
+          "card_id": "card_lesson_reader",
+          "label": "深度讲义阅读器",
+          "context_scope": "[Global: Host-level]",
+          "metric_key": "active_lesson_chapter",
+          "value_type": "string"
+        },
+        {
+          "card_id": "card_framework_count",
+          "label": "收录测评框架与基准数",
+          "context_scope": "[Global: Host-level]",
+          "metric_key": "indexed_framework_count",
+          "value_type": "integer"
+        },
+        {
+          "card_id": "card_code_scaffolds",
+          "label": "实战代码脚手架",
+          "context_scope": "[Asset: Data-level]",
+          "metric_key": "active_code_scaffold",
+          "value_type": "string"
+        },
+        {
+          "card_id": "card_quiz_accuracy",
+          "label": "测评概念自测得分",
+          "context_scope": "[Asset: Data-level]",
+          "metric_key": "quiz_accuracy_score",
+          "value_type": "integer"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "entry_id": "ENT-001",
+      "role_id": "ROL-001",
+      "requirement_id": "REQ-001",
+      "module_id": "MOD-001",
+      "surface_id": "primary_workspace",
+      "target": {
+        "type": "route",
+        "key": "curriculum-view"
+      },
+      "priority": "primary",
+      "release_stage": "available"
+    },
+    {
+      "entry_id": "ENT-002",
+      "role_id": "ROL-001",
+      "requirement_id": "REQ-002",
+      "module_id": "MOD-002",
+      "surface_id": "primary_workspace",
+      "target": {
+        "type": "route",
+        "key": "matrix-view"
+      },
+      "priority": "primary",
+      "release_stage": "available"
+    },
+    {
+      "entry_id": "ENT-003",
+      "role_id": "ROL-001",
+      "requirement_id": "REQ-003",
+      "module_id": "MOD-003",
+      "surface_id": "primary_workspace",
+      "target": {
+        "type": "route",
+        "key": "video-vault-view"
+      },
+      "priority": "secondary",
+      "release_stage": "available"
+    },
+    {
+      "entry_id": "ENT-004",
+      "role_id": "ROL-001",
+      "requirement_id": "REQ-004",
+      "module_id": "MOD-004",
+      "surface_id": "primary_workspace",
+      "target": {
+        "type": "route",
+        "key": "code-lab-view"
+      },
+      "priority": "primary",
+      "release_stage": "available"
+    },
+    {
+      "entry_id": "ENT-005",
+      "role_id": "ROL-001",
+      "requirement_id": "REQ-005",
+      "module_id": "MOD-005",
+      "surface_id": "primary_workspace",
+      "target": {
+        "type": "route",
+        "key": "quiz-view"
+      },
+      "priority": "secondary",
+      "release_stage": "available"
+    },
+    {
+      "entry_id": "ENT-006",
+      "role_id": "ROL-001",
+      "requirement_id": "REQ-006",
+      "module_id": "MOD-001",
+      "surface_id": "primary_workspace",
+      "target": {
+        "type": "route",
+        "key": "theme-toggle"
+      },
+      "priority": "auxiliary",
+      "release_stage": "available"
+    },
+    {
+      "entry_id": "ENT-007",
+      "role_id": "ROL-001",
+      "requirement_id": "REQ-007",
+      "module_id": "MOD-001",
+      "surface_id": "primary_workspace",
+      "target": {
+        "type": "route",
+        "key": "lesson-reader"
+      },
+      "priority": "primary",
+      "release_stage": "available"
+    }
+  ]
+}
